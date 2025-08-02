@@ -9,14 +9,14 @@ export default function Home() {
 
   useEffect(() => {
     if (email) {
-      fetch(`/api/get-assignments?email=${email}`)
+      fetch(`https://tulikajatrele1.app.n8n.cloud/webhook-test/922f548e-378e-4b3c-a578-bdf15307c0f6/get-assignments?email=${email}`)
         .then(res => res.json())
         .then(data => setAssignments(data));
     }
   }, [email]);
 
   const handleLogSubmit = () => {
-    fetch("/api/submit-log", {
+    fetch("https://tulikajatrele1.app.n8n.cloud/webhook-test/90e6e378-5a50-44da-9e60-c727d904bf98/submit-log", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...logEntry, bd: email })
